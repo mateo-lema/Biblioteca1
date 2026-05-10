@@ -21,6 +21,7 @@ public class Multa {
     }
     
 
+
     public double getMonto() {
         return monto;
     }
