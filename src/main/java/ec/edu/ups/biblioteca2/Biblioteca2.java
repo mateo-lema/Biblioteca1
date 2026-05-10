@@ -29,12 +29,13 @@
             int opcion;
 
             do {
-                System.out.println("Menú");
+                System.out.println("Menu");
                 System.out.println("1. REALIZAR PRESTAMO");
                 System.out.println("2. DEVOLVER LIBRO");
                 System.out.println("3. Salir");
 
                 opcion = entrada.nextInt();
+                entrada.nextLine();
 
                 switch(opcion){
                     case 1:
@@ -42,67 +43,74 @@
                         System.out.println("\nREGISTRO DEL PRESTAMO");
 
                         System.out.println("\nIngrese su cedula: ");
-                        String cedula = entrada.next();
+                        String cedula = entrada.nextLine();
                         
                         System.out.println("Ingrese su nombre: ");
-                        String nombre = entrada.next();
+                        String nombre = entrada.nextLine();
                         
                         System.out.println("Ingrese su correo: ");
-                        String correo = entrada.next();
+                        String correo = entrada.nextLine();
                         
                         System.out.println("Ingrese su telefono: ");
-                        String telefono = entrada.next();               
+                        String telefono = entrada.nextLine();               
 
                         Usuario usuario=new Usuario(nombre,cedula,correo,telefono);
                         usuarios.add(usuario);
                         
                         System.out.println("Ingrese el ISBN del libro: ");
-                        String isbn = entrada.next();
-                        entrada.nextLine();
+                        String isbn = entrada.nextLine();
+        
+                       
                         
                         System.out.println("Ingrese el titulo del libro: ");
-                        String titulo = entrada.next();
+                        String titulo = entrada.nextLine();
                         
                         System.out.println("Ingrese la editorial del libro: ");
-                        String editorial = entrada.next();
+                        String editorial = entrada.nextLine();
                         
                         Libro libro = new Libro(isbn, titulo, editorial, true);
                         libros.add(libro);
                         
                         System.out.println("Ingrese el nombre del bibliotecario: ");
-                        String nombreB = entrada.next();
+                        String nombreB = entrada.nextLine();
                         
                         System.out.println("Ingrese la cedula del bibliotecario: ");
-                        String cedulaB = entrada.next();
+                        String cedulaB = entrada.nextLine();
                         
                         System.out.println("Ingrese el correo del bibliotecario: ");
-                        String correoB = entrada.next();
+                        String correoB = entrada.nextLine();
                         
                         System.out.println("Ingrese el telefono del bibliotecario: ");
-                        String telefonoB = entrada.next();
+                        String telefonoB = entrada.nextLine();
                         
-                        Bibliotecario bibliotecario = new Bibliotecario(cedulaB, correoB, nombreB, telefonoB);
+                        Bibliotecario bibliotecario = new Bibliotecario(nombreB, cedulaB,correoB,telefonoB);
                         
                         Prestamo prestamo = new Prestamo();
                         
                         System.out.println("Agregar codigo de autor");
                         int codigoA= entrada.nextInt();
+                        entrada.nextLine();
                         System.out.println("Ingrese el nombre del autor");
-                        String nombreA=entrada.next();  
+                        String nombreA=entrada.nextLine();  
                         System.out.println("Ingrese la nacionalidad del autor");
-                        String nacionalidadA=entrada.next();
+                        String nacionalidadA=entrada.nextLine();
                         Autor autor =new Autor(codigoA,nombreA,nacionalidadA);
                         autor.agregarLibro(libro);
                         
                         
                         if (libro.verificarDisponibilidad()) {
                             prestamo.registrarPrestamo(usuario, libro, bibliotecario);
+
                             prestamos.add(prestamo);
+                            usuario.getPrestamos().add(prestamo);
+                            bibliotecario.getPrestamosRegistrados().add(prestamo);
+                            
                             System.out.println("Prestamo registrado");
                             System.out.println(prestamo);
+                            System.out.println(autor);
                         } else {
                             System.out.println("El libro no esta disponible.");
-                    }
+                        }
                         
                         break;
 

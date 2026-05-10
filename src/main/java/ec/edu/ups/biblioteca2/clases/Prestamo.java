@@ -110,7 +110,7 @@ public class Prestamo {
 
     @Override
     public String toString() {
-        return "Prestamo{" + "codigo=" + codigo + ", fechaPrestamo=" + fechaPrestamo + ", fechaDevolucion=" + fechaDevolucion + ", estado=" + estado + ", libro=" + libro + ", usuario=" + usuario + ", bibliotecario=" + bibliotecario + '}';
+        return "Prestamo{" + "codigo=" + codigo+1 + ", fechaPrestamo=" + fechaPrestamo + ", fechaDevolucion=" + fechaDevolucion + ", estado=" + estado + ", \n libro=" + libro + ",\n usuario=" + usuario + ",\n bibliotecario=" + bibliotecario + '}';
     }
 
 }

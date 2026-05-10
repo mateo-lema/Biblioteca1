@@ -47,9 +47,9 @@ public class Usuario extends Persona{
     
 
     @Override
-   public String toString() {
-    String resultado=super.toString();
-    resultado+=" Prestamos "+prestamos;
+public String toString() {
+    String resultado = super.toString();
+    resultado += " Cantidad de prestamos: " + prestamos.size();
     return resultado;
 }
     

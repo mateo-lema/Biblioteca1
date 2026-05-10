@@ -1,6 +1,8 @@
-ec\edu\ups\biblioteca2\clases\Usuario.class
 ec\edu\ups\biblioteca2\clases\Libro.class
 ec\edu\ups\biblioteca2\clases\Prestamo.class
 ec\edu\ups\biblioteca2\clases\Bibliotecario.class
 ec\edu\ups\biblioteca2\Biblioteca2.class
+ec\edu\ups\biblioteca2\clases\Persona.class
+ec\edu\ups\biblioteca2\clases\Usuario.class
+ec\edu\ups\biblioteca2\clases\Multa.class
 ec\edu\ups\biblioteca2\clases\Autor.class

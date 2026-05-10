@@ -50,18 +50,15 @@ public class Bibliotecario extends Persona{
         System.out.println("Se ha registrado la devolucion");
     }
 
-    @Override
-    public String toString() {
-        String resultado=super.toString();
-        resultado+=" Prestamos registrados "+prestamosRegistrados;
-        return resultado;
-    }
-
+@Override
+public String toString() {
+    String resultado = super.toString();
+    resultado += " Cantidad de prestamos registrados: " + prestamosRegistrados.size();
+    return resultado;
+}
     
     
     
     
-    
-    
-    
+       
 }
