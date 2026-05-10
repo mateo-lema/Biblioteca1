@@ -10,12 +10,12 @@ package ec.edu.ups.biblioteca2.clases;
  * @author mateo
  */
 public class Libro {
-    private int ISBN;
+    private String ISBN;
     private String titulo;
     private String editorial;
     private boolean disponible;
 
-    public Libro(int ISBN, String titulo, String editorial, boolean disponible) {
+    public Libro(String ISBN, String titulo, String editorial, boolean disponible) {
         this.ISBN = ISBN;
         this.titulo = titulo;
         this.editorial = editorial;
@@ -26,11 +26,11 @@ public class Libro {
         
     }
 
-    public int getISBN() {
+    public String getISBN() {
         return ISBN;
     }
 
-    public void setISBN(int ISBN) {
+    public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
 
