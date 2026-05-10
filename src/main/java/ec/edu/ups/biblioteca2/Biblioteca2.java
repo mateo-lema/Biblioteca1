@@ -85,7 +85,17 @@
                         
                         Prestamo prestamo = new Prestamo();
                         
-                        if (libro.isDisponible()) {
+                        System.out.println("Agregar codigo de autor");
+                        int codigoA= entrada.nextInt();
+                        System.out.println("Ingrese el nombre del autor");
+                        String nombreA=entrada.next();  
+                        System.out.println("Ingrese la nacionalidad del autor");
+                        String nacionalidadA=entrada.next();
+                        Autor autor =new Autor(codigoA,nombreA,nacionalidadA);
+                        autor.agregarLibro(libro);
+                        
+                        
+                        if (libro.verificarDisponibilidad()) {
                             prestamo.registrarPrestamo(usuario, libro, bibliotecario);
                             prestamos.add(prestamo);
                             System.out.println("Prestamo registrado");

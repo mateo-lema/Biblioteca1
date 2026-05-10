@@ -22,11 +22,11 @@ public class Autor {
         libros=new ArrayList<>();
     }
 
-    public Autor(int codigo, String nombre, String nacionalidad, List<Libro> libros) {
+    public Autor(int codigo, String nombre, String nacionalidad) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.nacionalidad = nacionalidad;
-        this.libros = libros;
+        libros=new ArrayList<>();
     }
 
     public int getCodigo() {
