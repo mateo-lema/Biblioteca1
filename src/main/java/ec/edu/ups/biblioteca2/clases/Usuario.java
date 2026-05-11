@@ -43,16 +43,15 @@ public class Usuario extends Persona{
     public void devolverLibro(Libro libro) {
         System.out.println("Libro devuelto: " + libro.getTitulo());
     }
-    
-    
 
     @Override
-public String toString() {
-    String resultado = super.toString();
-    resultado += " Cantidad de prestamos: " + prestamos.size();
-    return resultado;
-}
-    
+    public String toString() {
+        String resultado = super.toString();
+        resultado += " Cantidad de prestamos: " + prestamos.size();
+        return resultado;
+    }
+
+
     
     
 }

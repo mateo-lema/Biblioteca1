@@ -14,6 +14,7 @@ public class Libro {
     private String titulo;
     private String editorial;
     private boolean disponible;
+    private Autor autor;
 
     public Libro(String ISBN, String titulo, String editorial, boolean disponible) {
         this.ISBN = ISBN;
@@ -58,6 +59,14 @@ public class Libro {
         this.disponible = disponible;
     }
     
+    public Autor getAutor() {
+        return autor;
+    }
+
+    public void setAutor(Autor autor) {
+        this.autor = autor;
+    }
+    
     public boolean verificarDisponibilidad() {
 
     if(disponible == true){
@@ -69,8 +78,10 @@ public class Libro {
 
     @Override
     public String toString() {
-        return "Libro{" + "ISBN=" + ISBN + ", titulo=" + titulo + ", editorial=" + editorial + ", disponible=" + disponible + '}';
-    }
+    return "Libro{" +"ISBN=" + ISBN +", titulo=" + titulo +", editorial=" + editorial +", disponible=" + disponible +", autor=" + (autor.getNombre()) +'}';
+}
+
+    
        
     
     

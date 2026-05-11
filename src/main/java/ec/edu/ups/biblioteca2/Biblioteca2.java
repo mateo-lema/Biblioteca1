@@ -67,6 +67,7 @@ public class Biblioteca2 {
 
                     Libro libro = new Libro(isbn, titulo, editorial, true);
                     libros.add(libro);
+                   
 
                     System.out.println("Ingrese el nombre del bibliotecario: ");
                     String nombreB = entrada.nextLine();
@@ -83,7 +84,9 @@ public class Biblioteca2 {
                     Bibliotecario bibliotecario = new Bibliotecario(nombreB, cedulaB, correoB, telefonoB);
 
                     Prestamo prestamo = new Prestamo();
-
+                    
+                    
+             
                     System.out.println("Agregar codigo de autor");
                     int codigoA = entrada.nextInt();
                     entrada.nextLine();
@@ -93,6 +96,7 @@ public class Biblioteca2 {
                     String nacionalidadA = entrada.nextLine();
                     Autor autor = new Autor(codigoA, nombreA, nacionalidadA);
                     autor.agregarLibro(libro);
+                    libro.setAutor(autor);
 
                     if (libro.verificarDisponibilidad()) {
                         prestamo.registrarPrestamo(usuario, libro, bibliotecario);
@@ -130,7 +134,7 @@ public class Biblioteca2 {
                             System.out.println("Devolucion registrada correctamente.");
                             System.out.println(prestamoDevolver);
                             
-                             System.out.println("¿Desea Pagar una multa?");
+                             System.out.println("Desea Pagar una multa?");
                             System.out.println("1. Si");
                             System.out.println("2. No");
 
@@ -146,21 +150,15 @@ public class Biblioteca2 {
                                 System.out.println("Ingrese el monto de la multa:");
                                 double monto = entrada.nextDouble();
                                 entrada.nextLine();
-
                                 multa.setMonto(monto);
-
                                 multa.pagarMulta();
-
                                 System.out.println(multa);
-
                                 if (multa.estaPagada()) {
                                     System.out.println("La multa fue pagada correctamente.");
                                 } else {
                                     System.out.println("La multa no ha sido pagada.");
                                 }
                             }
-                            
-                           
                         } else {
                             System.out.println("Numero de prestamo invalido.");
                         }
